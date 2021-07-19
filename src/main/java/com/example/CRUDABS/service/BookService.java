@@ -92,10 +92,6 @@ public class BookService {
             if(book.getBook_name() != null){ book_name = book.getBook_name();
             } else{ book_name = books.get().getBook_name(); }
 
-            String book_category;
-            if(book.getBook_category() != null){ book_category = book.getBook_category();
-            } else{ book_category = books.get().getBook_category(); }
-
             String book_author;
             if(book.getAuthor() != null){ book_author = book.getAuthor();
             } else{ book_author = books.get().getAuthor(); }
@@ -106,7 +102,6 @@ public class BookService {
 
             books.get().setBook_name(book_name);
             books.get().setAuthor(book_author);
-            books.get().setBook_category(book_category);
             books.get().setBook_description(book_description);
 
             status = HttpStatus.CREATED;

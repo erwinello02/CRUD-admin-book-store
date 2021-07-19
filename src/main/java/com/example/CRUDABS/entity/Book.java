@@ -22,16 +22,8 @@ public class Book {
     private String book_name;
     @Column(name="book_description")
     private String book_description;
-    @Column(name="book_category")
-    private String book_category;
     @Column(name="author")
     private String author;
-    @CreationTimestamp
-    @Column(name="created_at")
-    private LocalDate createdAt;
-    @UpdateTimestamp
-    @Column(name="updated_at")
-    private LocalDate updatedAt;
 
     public long getId() {
         return id;
@@ -57,14 +49,6 @@ public class Book {
         this.book_description = book_description;
     }
 
-    public String getBook_category() {
-        return book_category;
-    }
-
-    public void setBook_category(String book_category) {
-        this.book_category = book_category;
-    }
-
     public String getAuthor() {
         return author;
     }
@@ -73,19 +57,4 @@ public class Book {
         this.author = author;
     }
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDate getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDate updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }

@@ -3,7 +3,6 @@ package com.example.CRUDABS.controller;
 
 import com.example.CRUDABS.entity.Book;
 import com.example.CRUDABS.models.ResponseModel;
-import com.example.CRUDABS.repository.BookRepo;
 import com.example.CRUDABS.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +16,6 @@ public class BookController {
 
     @Autowired
     private BookService bookService;
-    @Autowired
-    BookRepo bookRepo;
 
     @PostMapping(value = "/book/add", produces = "application/json")
     public ResponseEntity<ResponseModel> addBook(@RequestBody Book book) {
@@ -49,6 +46,7 @@ public class BookController {
     public ResponseEntity<ResponseModel> deleteBook(@PathVariable Long id) {
         return bookService.deleteBook(id);
     }
+
     @DeleteMapping(value = "/book/delete/all", produces = "application/json")
     public ResponseEntity<ResponseModel> deleteBooks() {
         return bookService.deleteBooks();
