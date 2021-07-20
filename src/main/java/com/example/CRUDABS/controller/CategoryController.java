@@ -18,9 +18,6 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @Autowired
-    BookCategoryAssignService bookCategoryAssignService;
-
     @PostMapping(value = "/category/add", produces = "application/json")
 
     public ResponseEntity<ResponseModel> addCategory(@RequestBody Category category) {
@@ -47,18 +44,4 @@ public class CategoryController {
         return categoryService.deleteCategory(id);
     }
 
-    @PostMapping(value = "/category/assign/book", produces = "application/json")
-    public ResponseEntity<ResponseModel> assignCategoryForBook(@RequestParam Long cat_id, @RequestParam Long book_id) {
-        return bookCategoryAssignService.assignCategoryForBook(cat_id, book_id);
-    }
-
-    @DeleteMapping(value = "/category/remove/book", produces = "application/json")
-    public ResponseEntity<ResponseModel> removeCategoryForBook(@RequestParam Long cat_id, @RequestParam Long book_id) {
-        return bookCategoryAssignService.removeCategoryForBook(cat_id, book_id);
-    }
-
-    @GetMapping(value = "/category/assign/all", produces = "application/json")
-    public ResponseEntity<ResponseModel> getAllAssignCategoryForBooks() {
-        return bookCategoryAssignService.getAllAssignCategoryForBooks();
-    }
 }

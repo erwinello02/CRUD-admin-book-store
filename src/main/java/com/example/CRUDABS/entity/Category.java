@@ -1,19 +1,9 @@
 package com.example.CRUDABS.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Table(name="tbl_category")
 @Entity
-@Getter
-@Setter
-@ToString
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
